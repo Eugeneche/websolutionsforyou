@@ -10,7 +10,7 @@ import * as styles from "../components/index.module.css"
 
 const IndexPage = () => (
   <Layout>
-    
+    <h1>Web solutions for you</h1>
   </Layout>
 )
 
