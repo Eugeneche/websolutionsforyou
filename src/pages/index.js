@@ -5,6 +5,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Header from "../components/Header/Header"
+import * as styles from "../style/_style.module.scss"
 //import * as styles from "../components/index.module.css"
 
 
@@ -15,14 +16,15 @@ const IndexPage = () => {
     <>
       <Header />
       <Layout>
-      
-        <h1>Web solutions for you</h1>
-        <p>
-          Do you want to announce your case? Would you wish to tell each of your probable clients about attractive offers and benefits?
-        </p>
-        <p>
-          So, yes, I can help you promote your product or service providing convenient solutions exactly for your current business.
-        </p>
+        <div className={styles.container}> 
+          <h1>Web solutions for you</h1>
+          <p>
+            Do you want to announce your case? Would you wish to tell each of your probable clients about attractive offers and benefits?
+          </p>
+          <p>
+            So, yes, I can help you promote your product or service providing convenient solutions exactly for your current business.
+          </p>
+        </div>
       </Layout>
     </>
   )

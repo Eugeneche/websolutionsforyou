@@ -14,12 +14,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className={customStyles.container}>
-        <main>{children}</main>
-        <footer>
-          © 2022 - {new Date().getFullYear()}
-        </footer>
-      </div>
+      <main>{children}</main>
+      <footer>
+        <div className={customStyles.container}>
+          {/* © 2022 - {new Date().getFullYear()} */}
+        </div>
+      </footer>     
     </>
   )
 }
