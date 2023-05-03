@@ -2,7 +2,7 @@ import * as React from "react"
 //import { Link } from "gatsby"
 //import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
+//import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Header from "../components/Header/Header"
 import * as styles from "../style/_style.module.scss"
@@ -15,7 +15,7 @@ const IndexPage = () => {
   return (
     <>
       <Header />
-      <Layout>
+      {/* <Layout> */}
         <div className={styles.container}> 
           <h1>Web solutions for you</h1>
           <p>
@@ -25,7 +25,7 @@ const IndexPage = () => {
             So, yes, I can help you promote your product or service providing convenient solutions exactly for your current business.
           </p>
         </div>
-      </Layout>
+      {/* </Layout> */}
     </>
   )
 }

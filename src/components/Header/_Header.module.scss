@@ -1,9 +1,15 @@
+@import '../../style/vars';
+
 .header {
-    height: fit-content;
-    background: #b26eff;
+    height: 770px;
+    background: $headerColor;
 
     .header-container {
-        max-width: 1200px;
+        width: $headerContainer;
+        height: 100%;
         margin: auto;
+        display: grid;
+        grid-template-columns: 50% 30px 200px 200px 1fr;
+        grid-template-rows: 75px 25px 200px 50px 100px 25px 200px 1fr;
     }
 }

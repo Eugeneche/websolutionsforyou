@@ -15,7 +15,16 @@ module.exports = {
     siteUrl: `https://websolutionsforyou.com`,
   },
   plugins: [
+    `gatsby-plugin-mdx`,
+    `gatsby-transformer-json`,
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/config/translations`,
+        name: `translations`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
