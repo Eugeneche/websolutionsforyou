@@ -1,7 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import * as styles from "./_MainMenu.module.scss"
+import * as style from "./_MainMenu.module.scss"
 import { LocaleContext } from "../layout"
+
+import ukr from "../../images/ukr.svg"
+import eng from "../../images/eng.svg"
+import cze from "../../images/cze.svg"
 //import LocalizedLink from "../localizedLink"
 //import useTranslations from "../useTranslations"
 
@@ -27,20 +31,18 @@ const LanguagesSwitcher = () => {
   return (
     <nav>
       <Link to={`${path()}`} hrefLang="en">
-        English
+        <img className={style.flag} src={eng}></img>
       </Link>
-      {` `}/{` `}
       <Link to={`/cs${path()}`} hrefLang="cs">
-        Čeština
+        <img className={style.flag} src={cze}></img>
       </Link>
-      {` `}/{` `}
       <Link to={`/uk${path()}`} hrefLang="uk">
-        Українська
+        <img className={style.flag} src={ukr}></img>
       </Link>
-      {` `}/{` `}
+{/*       {` `}/{` `}
       <Link to={`/ru${path()}`} hrefLang="ru">
         Русский
-      </Link>
+      </Link> */}
     </nav>
   )
 }
