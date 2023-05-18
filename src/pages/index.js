@@ -21,7 +21,7 @@ const IndexPage = ({data}) => {
     projects
   } = useTranslations()
 
-/*   const [isIntersecting, setIsIntersecting] = useState(false)
+  const [isIntersecting, setIsIntersecting] = useState(false)
   const ref = useRef(null)
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const IndexPage = ({data}) => {
         el.classList.remove("slide-in");
       });
     }
-  }, [isIntersecting]) */
+  }, [isIntersecting])
   
   return (
     <>
@@ -62,7 +62,7 @@ const IndexPage = ({data}) => {
 
         <section className={styles.projects}>
           <h2>{projects}</h2>
-          <div className={styles.projectsStorefront} /* ref={ref} */> 
+          <div className={styles.projectsStorefront} ref={ref}> 
           </div>
         </section>
     </>
