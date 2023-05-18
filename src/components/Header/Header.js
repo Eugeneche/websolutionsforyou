@@ -19,20 +19,20 @@ const Header = () => {
 
             <div className={style.banner}>
                 <div className={style.bannerContainer}>
-                    <img className={style.fist} src={fist}></img>
+                    <img className={style.fist} src={fist} alt="fist for support for Ukraine"></img>
                     <span className={style.call}>Stand with Ukraine! Help Ukraine defeat global evil!</span>
                     <a href="https://savelife.in.ua/en/donate-en/#donate-army-card-once" target="_blank" rel="noopener noreferrer">
-                        <img className={style.fist} src={cba}></img>
+                        <img className={style.fist} src={cba} alt="come back alive fund's logo"></img>
                     </a>
                 </div>
             </div>
 
             <div className={style.headerContainer}>
                 <div className={style.name}>web<br></br>solutions<br></br>for you</div>
-                <div className={style.hero}>{headerHero}</div>
-                <div className={style.graph}><img src={graph}></img></div>
-                <div className={style.progressbar}><img src={progressbar}></img></div>
-                <div className={style.rounds}><img src={rounds}></img></div>
+                <h1 className={style.hero}>{headerHero}</h1>
+                <div className={style.graph}><img src={graph} alt="graphs gif"></img></div>
+                <div className={style.progressbar}><img src={progressbar} alt="progressbar gif"></img></div>
+                <div className={style.rounds}><img src={rounds} alt="rolling rounds gif"></img></div>
                 {/* <StaticImage 
                     src="../../images/header_main_image.png" 
                     alt="web development"

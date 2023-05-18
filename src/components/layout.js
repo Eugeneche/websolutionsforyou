@@ -28,6 +28,11 @@ const Layout = ({ children, pageContext: { locale } }) => (
       {/* </header> */}
       <MDXProvider components={{ a: MdxLink }}>
         <main>{children}</main>
+        <footer>
+        <div>
+          © 2022 - {new Date().getFullYear()}
+        </div>
+      </footer> 
       </MDXProvider>
     </div>
   </LocaleContext.Provider>

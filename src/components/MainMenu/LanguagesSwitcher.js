@@ -31,13 +31,13 @@ const LanguagesSwitcher = () => {
   return (
     <nav>
       <Link to={`${path()}`} hrefLang="en">
-        <img className={style.flag} src={eng}></img>
+        <img className={style.flag} src={eng} alt="great britain flag"></img>
       </Link>
       <Link to={`/cs${path()}`} hrefLang="cs">
-        <img className={style.flag} src={cze}></img>
+        <img className={style.flag} src={cze} alt="czech flag"></img>
       </Link>
       <Link to={`/uk${path()}`} hrefLang="uk">
-        <img className={style.flag} src={ukr}></img>
+        <img className={style.flag} src={ukr} alt="ukrainian flag"></img>
       </Link>
 {/*       {` `}/{` `}
       <Link to={`/ru${path()}`} hrefLang="ru">

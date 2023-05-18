@@ -35,6 +35,8 @@ const query = graphql`
             home
             projects
             contacts
+            index_H2_1
+            chapter_1
           }
         }
       }
