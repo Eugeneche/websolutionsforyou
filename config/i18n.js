@@ -17,6 +17,15 @@ module.exports = {
     ogLanguage: `cs-CZ`,
     defaultTitle: `Web solutions for you`,
     defaultDescription: `Web solutions for you`,
+  }, 
+  ru: {
+    path: `ru`,
+    locale: `ru-RU`,
+    dateFormat: `DD.MM.YYYY`,
+    siteLanguage: `ru`,
+    ogLanguage: `ru_RU`,
+    defaultTitle: `Web solutions for you`,
+    defaultDescription: `Web solutions for you`,
   },
   uk: {
     path: `uk`,
