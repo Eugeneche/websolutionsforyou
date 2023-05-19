@@ -30,7 +30,7 @@ const Layout = ({ children, pageContext: { locale } }) => (
         <main>{children}</main>
         <footer>
         <div>
-          © 2022 - 2023
+          © 2022 - {new Date().getFullYear()}
         </div>
       </footer> 
       </MDXProvider>
