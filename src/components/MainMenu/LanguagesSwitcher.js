@@ -9,9 +9,11 @@ import cze from "../../images/cze.svg"
 //import LocalizedLink from "../localizedLink"
 //import useTranslations from "../useTranslations"
 
-const isBrowser = typeof window !== "undefined"
+
 
 const LanguagesSwitcher = () => {
+
+  const isBrowser = typeof window !== "undefined"
   //const { headerHero } = useTranslations()
 
   const locale = React.useContext(LocaleContext)

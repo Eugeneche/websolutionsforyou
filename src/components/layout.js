@@ -7,7 +7,7 @@
 
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
-//import MainMenu from "./MainMenu/MainMenu"
+import MainMenu from "./MainMenu/MainMenu"
 import MdxLink from "./mdxLink"
 
 import "./layout.css"
@@ -24,7 +24,7 @@ const Layout = ({ children, pageContext: { locale } }) => (
   <LocaleContext.Provider value={{ locale }}>
     <div className="global-wrapper">
       {/* <header className="global-header"> */}
-        {/* <MainMenu /> */}
+        <MainMenu />
       {/* </header> */}
       <MDXProvider components={{ a: MdxLink }}>
         <main>{children}</main>
