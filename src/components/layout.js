@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import React, { Suspense } from "react"
+import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import MainMenu from "./MainMenu/MainMenu"
 import MdxLink from "./mdxLink"
@@ -30,7 +30,7 @@ const Layout = ({ children, pageContext: { locale } }) => (
         <main>{children}</main>
         <footer>
         <div>
-          © 2022 - <Suspense fallback={null}>{new Date().getFullYear()}</Suspense>
+          © 2022 - {new Date().getFullYear()}
         </div>
       </footer> 
       </MDXProvider>
