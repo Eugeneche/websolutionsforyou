@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 
 //import Layout from "../components/layout"
 import Seo from "../components/seo"
-//import Header from "../components/Header/Header"
+import Header from "../components/Header/Header"
 import useTranslations from "../components/useTranslations"
 import * as styles from "../style/_style.module.scss"
 //import * as styles from "../components/index.module.css"
@@ -52,7 +52,7 @@ const IndexPage = ({data}) => {
   
   return (
     <>
-      {/* <Header /> */}
+      <Header />
         <section /* className={styles.about} */>
           <div className={styles.container}> 
             <h2>{index_H2_1}</h2>
