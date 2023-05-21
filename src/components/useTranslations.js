@@ -37,6 +37,17 @@ const query = graphql`
             contacts
             index_H2_1
             chapter_1
+            your_name
+            your_message
+            your_email
+            your_phone
+            send
+            name
+            phone
+            email
+            message
+            four_o_four_title
+            four_o_four_text
           }
         }
       }

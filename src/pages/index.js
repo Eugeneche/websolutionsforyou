@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
 import { graphql } from "gatsby"
-//import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 //import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -13,7 +13,7 @@ import * as styles from "../style/_style.module.scss"
 
 const IndexPage = ({data}) => {
 
-  console.log(data)
+  const projectsArray = data.allFile.nodes
 
   const {
     index_H2_1,
@@ -27,27 +27,28 @@ const IndexPage = ({data}) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        //console.log(entry.target.children)
         setIsIntersecting(entry.isIntersecting)
       },
-      { threshold: 0.4 }
+      { threshold: 0.2 }
     )
 
     observer.observe(ref.current)
-
+    //console.log(ref.current)
     return () => observer.disconnect()
 
   }, [isIntersecting])
 
   useEffect(() => {
     if (isIntersecting) {
+
       ref.current.querySelectorAll("div").forEach((el) => {
-        el.classList.add("slide-in");
-      });
-    } else {
+        el.classList.remove(styles.projectItem)
+      })
       ref.current.querySelectorAll("div").forEach((el) => {
-        el.classList.remove("slide-in");
-      });
-    }
+        el.classList.add(styles.normal)
+      })
+    } 
   }, [isIntersecting])
   
   return (
@@ -61,8 +62,24 @@ const IndexPage = ({data}) => {
         </section>
 
         <section className={styles.projects}>
-          <h2>{projects}</h2>
+          <div className={styles.container}>
+            <h2>{projects}</h2>
+          </div>
+          
           <div className={styles.projectsStorefront} ref={ref}> 
+            {projectsArray.map(project => {
+              return (
+                
+                  <GatsbyImage 
+                    key={project.id} className={styles.projectItem}
+                    image={project.childImageSharp.gatsbyImageData}
+                    alt="project"
+                    objectPosition="50% 0%"
+                    /* style={{objectPosition: "50% 50%"}} */
+                  />
+                
+              )
+            })}
           </div>
         </section>
     </>
@@ -71,10 +88,11 @@ const IndexPage = ({data}) => {
 
 export const query = graphql`
   query {
-    allFile(filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}}) {
+    allFile(filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}) {
       nodes {
+        id
         childImageSharp {
-          gatsbyImageData
+          gatsbyImageData(height: 220)
         }
       }
     }

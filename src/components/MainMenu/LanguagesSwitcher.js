@@ -38,8 +38,6 @@ const LanguagesSwitcher = () => {
     } else { 
       setPath(window.location.pathname)
     }
-
-    console.log(window.location)
   })
 
   

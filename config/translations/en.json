@@ -6,5 +6,20 @@
   "contacts": "contacts",
 
   "index_H2_1": "Why am I doing this?",
-  "chapter_1": "As a web developer, I aim to create impactful websites that work as powerful tools for small businesses and entrepreneurship. I am ambitious to provide my clients with products that are not only visually appealing but also highly functional. By showcasing my clients' services and goods advantages for attracting new customers, I intend to help them grow their businesses and expand their reach. Let me assist you in spreading the word about your company through an engaging online presence."
+  "chapter_1": "As a web developer, I aim to create impactful websites that work as powerful tools for small businesses and entrepreneurship. I am ambitious to provide my clients with products that are not only visually appealing but also highly functional. By showcasing my clients' services and goods advantages for attracting new customers, I intend to help them grow their businesses and expand their reach. Let me assist you in spreading the word about your company through an engaging online presence.",
+
+  "your_name": "your name",
+  "your_message": "your message",
+  "your_email": "your email",
+  "your_phone": "your phone number (is not required)",
+  "send": "send",
+  "name": "Name",
+  "phone": "Phone",
+  "email": "Email",
+  "message": "Message",
+
+  "four_o_four_title": "Sorry, but this page does not exist.",
+  "four_o_four_text": "We're sorry, but we can't find the page you're looking for.",
+  
+  "footer": "© 2021 - {{year}} Photographer and videographer Yudai Delgado"
 }
