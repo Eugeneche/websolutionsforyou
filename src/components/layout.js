@@ -8,6 +8,7 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import MainMenu from "./MainMenu/MainMenu"
+import Footer from "../components/Footer/Footer"
 import MdxLink from "./mdxLink"
 
 import "./layout.css"
@@ -28,11 +29,12 @@ const Layout = ({ children, pageContext: { locale } }) => (
       {/* </header> */}
       <MDXProvider components={{ a: MdxLink }}>
         <main>{children}</main>
-        <footer>
+        <Footer />
+{/*         <footer>
         <div>
           © 2022 - {new Date().getFullYear()}
         </div>
-      </footer> 
+      </footer>  */}
       </MDXProvider>
     </div>
   </LocaleContext.Provider>

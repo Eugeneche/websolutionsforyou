@@ -1,0 +1,12 @@
+@import '../../style/vars';
+
+.footer {
+    background: #8b8b8b;
+    min-height: 50px;
+
+    .container {
+        max-width: $contentContainer;
+        margin: auto;
+        padding: 0 20px;
+    }
+}

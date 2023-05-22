@@ -3,6 +3,7 @@
 .container {
     max-width: $contentContainer;
     margin: auto;
+    padding: 0 20px;
 }
 
 .projects {
@@ -11,19 +12,13 @@
     background: #effbff;
 }
 
-/* .projects-storefront {
-    max-width: $contentContainer;
-    margin: auto;
-    height: fit-content;
-} */
-
 .projects-storefront {
     max-width: $contentContainer;
     margin: auto;
+    padding: 0 20px;
     height: fit-content;
     display: grid;
     grid-template-columns: repeat(3, 32%);
-    /* grid-template-rows: repeat(2, minmax(220px, 20%)); */
     gap: 2%;
 
     .project-item {

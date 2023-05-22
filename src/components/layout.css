@@ -223,7 +223,7 @@ pre tt:after {
 
 /* custom styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Source+Sans+Pro:wght@600&display=swap');
 
 html, body {
   width: 100%;
