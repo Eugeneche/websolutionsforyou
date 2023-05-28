@@ -80,14 +80,14 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           relativeDirectory
           childMdx {
+            id
             fields {
               isDefault
               locale
             }
             frontmatter {
               title
-            }
-            id
+            }           
           }
         }
       }
@@ -106,7 +106,8 @@ exports.createPages = async ({ graphql, actions }) => {
     // relativeDirectory is the name of the folder
     const slug = node.relativeDirectory.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[" "]/g, "-").toLowerCase()
 
-    const title = node.childMdx.frontmatter.title
+    const id = node.childMdx.id
+    const directory = node.relativeDirectory
 
     // Use the fields created in exports.onCreateNode
     const locale = node.childMdx.fields.locale
@@ -120,7 +121,8 @@ exports.createPages = async ({ graphql, actions }) => {
         // Only the title would not have been sufficient as articles could have the same title
         // in different languages, e.g. because an english phrase is also common in german
         locale,
-        title,
+        id,
+        directory,
       },
     })
   })

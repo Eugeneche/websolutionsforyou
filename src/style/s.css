@@ -1,0 +1,25 @@
+.before-load {
+    position: relative;
+    border: 1px solid #6fbdff;
+    overflow: hidden;
+}
+
+.before-load:nth-child(3n+1) {
+    top: 30px;
+}
+
+.before-load:nth-child(3n+2) {
+    top: 60px;
+}
+
+.before-load:nth-child(3n+3) {
+    top: 90px;
+}
+
+.after-load {
+    position: relative;
+    border: 1px solid #6fbdff;
+    top: 0;
+    transition: top ease 0.5s;
+    overflow: hidden;
+}

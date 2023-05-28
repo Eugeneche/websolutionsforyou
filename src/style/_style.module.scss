@@ -19,41 +19,8 @@
     height: fit-content;
     display: grid;
     grid-template-columns: repeat(3, 32%);
+    grid-template-rows: repeat(2, 250px);
     gap: 2%;
-
-    .project-item {
-        position: relative;
-        border: 1px solid #6fbdff;
-
-        img {
-            position: absolute;
-            top: 0;
-        }
-    }
-    
-    .project-item:nth-child(3n+1) {
-        top: 30px;
-    }
-    
-    .project-item:nth-child(3n+2) {
-        top: 60px;
-    }
-    
-    .project-item:nth-child(3n+3) {
-        top: 90px;
-    }
-
-    .normal {
-        position: relative;
-        border: 1px solid #6fbdff;
-        top: 0;
-        transition: top ease 0.5s;
-
-        img {
-            position: absolute;
-            top: 0;
-        }
-    }
 }
 
 @media screen and (max-width: 900px) {

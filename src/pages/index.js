@@ -2,12 +2,12 @@ import React, { useState, useRef, useEffect } from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-//import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Header from "../components/Header/Header"
 import useTranslations from "../components/useTranslations"
 import * as styles from "../style/_style.module.scss"
-//import * as styles from "../components/index.module.css"
+import "../style/s.css"
+import LocalizedLink from "../components/localizedLink"
 
 
 
@@ -34,7 +34,7 @@ const IndexPage = ({data}) => {
     )
 
     observer.observe(ref.current)
-    //console.log(ref.current)
+    console.log(ref.current)
     return () => observer.disconnect()
 
   }, [isIntersecting])
@@ -42,12 +42,14 @@ const IndexPage = ({data}) => {
   useEffect(() => {
     if (isIntersecting) {
 
-      ref.current.querySelectorAll("div").forEach((el) => {
-        el.classList.remove(styles.projectItem)
+      ref.current.querySelectorAll(`.before-load`).forEach((el) => {
+        console.log('a')
+        el.classList.remove(`before-load`)
+        el.classList.add(`after-load`)
       })
-      ref.current.querySelectorAll("div").forEach((el) => {
-        el.classList.add(styles.normal)
-      })
+/*       ref.current.querySelectorAll(`.a`).forEach((el) => {
+        el.classList.add(`.after-load`)
+      }) */
     } 
   }, [isIntersecting])
   
@@ -68,13 +70,17 @@ const IndexPage = ({data}) => {
           
           <div className={styles.projectsStorefront} ref={ref}> 
             {projectsArray.map(project => {
-              return (               
-                <GatsbyImage 
-                  key={project.id} className={styles.projectItem}
-                  image={project.childImageSharp.gatsbyImageData}
-                  alt="project"
-                  objectPosition="50% 0%"
-                />               
+              return (  
+                <div key={project.id} className="before-load">  
+                  <LocalizedLink to={`/${project.relativeDirectory.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[" "]/g, "-").toLowerCase()}`}>           
+                    <GatsbyImage                      
+                      image={project.childImageSharp.gatsbyImageData}
+                      alt="project"
+                      objectPosition="50% 0%"
+                      /* style={{position: "static"}} */
+                    />       
+                  </LocalizedLink>   
+                </div>     
               )
             })}
           </div>
@@ -87,9 +93,10 @@ export const query = graphql`
   query {
     allFile(filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}) {
       nodes {
+        relativeDirectory
         id
         childImageSharp {
-          gatsbyImageData(height: 220)
+          gatsbyImageData
         }
       }
     }
