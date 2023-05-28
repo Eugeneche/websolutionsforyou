@@ -17,7 +17,7 @@ module.exports = {
     ogLanguage: `cs-CZ`,
     defaultTitle: `Web solutions for you`,
     defaultDescription: `Web solutions for you`,
-  }, 
+  },/*  
   ru: {
     path: `ru`,
     locale: `ru-RU`,
@@ -26,7 +26,7 @@ module.exports = {
     ogLanguage: `ru_RU`,
     defaultTitle: `Web solutions for you`,
     defaultDescription: `Web solutions for you`,
-  },
+  }, */
   uk: {
     path: `uk`,
     locale: `uk-UA`,

@@ -68,16 +68,13 @@ const IndexPage = ({data}) => {
           
           <div className={styles.projectsStorefront} ref={ref}> 
             {projectsArray.map(project => {
-              return (
-                
-                  <GatsbyImage 
-                    key={project.id} className={styles.projectItem}
-                    image={project.childImageSharp.gatsbyImageData}
-                    alt="project"
-                    objectPosition="50% 0%"
-                    /* style={{objectPosition: "50% 50%"}} */
-                  />
-                
+              return (               
+                <GatsbyImage 
+                  key={project.id} className={styles.projectItem}
+                  image={project.childImageSharp.gatsbyImageData}
+                  alt="project"
+                  objectPosition="50% 0%"
+                />               
               )
             })}
           </div>

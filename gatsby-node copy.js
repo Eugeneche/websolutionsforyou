@@ -46,10 +46,9 @@ exports.onCreateNode = ({ node, actions }) => {
 
   // Check for "Mdx" type so that other files (e.g. images) are exluded
   if (node.internal.type === `Mdx`) {
-
     // Use path.basename
     // https://nodejs.org/api/path.html#path_path_basename_path_ext
-    const name = path.basename(node.internal.contentFilePath, `.mdx`)
+    const name = path.basename(node.fileAbsolutePath, `.mdx`)
 
     // Check if post.name is "index" -- because that's the file for default language
     // (In this case "en")
@@ -74,43 +73,44 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const projectTemplate = require.resolve(`./src/templates/project.js`)
 
-  const { data } = await graphql(`
-  query getProjects {
-      allFile(filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "mdx"}}) {
-        nodes {
-          relativeDirectory
-          childMdx {
-            fields {
-              isDefault
-              locale
+  const result = await graphql(`
+    {
+      project: allFile(filter: { sourceInstanceName: { eq: "projects" } }) {
+        edges {
+          node {
+            relativeDirectory
+            childMdx {
+              fields {
+                locale
+                isDefault
+              }
+              frontmatter {
+                title
+              }
             }
-            frontmatter {
-              title
-            }
-            id
           }
         }
       }
     }
   `)
 
-  if (data.errors) {
-    console.error(data.errors)
+  if (result.errors) {
+    console.error(result.errors)
     return
   }
 
-  const projectstList = data.allFile.nodes
+  const projectstList = result.data.project.edges
 
-  projectstList.forEach(node => {
+  projectstList.forEach(({ node: project }) => {
     // All files for a blogpost are stored in a folder
     // relativeDirectory is the name of the folder
-    const slug = node.relativeDirectory.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[" "]/g, "-").toLowerCase()
+    const slug = project.relativeDirectory
 
-    const title = node.childMdx.frontmatter.title
+    const title = project.childMdx.frontmatter.title
 
     // Use the fields created in exports.onCreateNode
-    const locale = node.childMdx.fields.locale
-    const isDefault = node.childMdx.fields.isDefault
+    const locale = project.childMdx.fields.locale
+    const isDefault = project.childMdx.fields.isDefault
 
     createPage({
       path: localizedSlug({ isDefault, locale, slug }),
