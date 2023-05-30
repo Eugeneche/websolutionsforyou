@@ -71,16 +71,17 @@ const IndexPage = ({data}) => {
           <div className={styles.projectsStorefront} ref={ref}> 
             {projectsArray.map(project => {
               return (  
-                <div key={project.id} className="before-load">  
-                  <LocalizedLink to={`/${project.relativeDirectory.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[" "]/g, "-").toLowerCase()}`}>           
-                    <GatsbyImage                      
+                 
+                  <LocalizedLink key={project.id} className="before-load" to={`/${project.relativeDirectory.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[" "]/g, "-").toLowerCase()}`}>           
+                    <GatsbyImage  
+                                          
                       image={project.childImageSharp.gatsbyImageData}
                       alt="project"
                       objectPosition="50% 0%"
                       /* style={{position: "static"}} */
                     />       
                   </LocalizedLink>   
-                </div>     
+               
               )
             })}
           </div>

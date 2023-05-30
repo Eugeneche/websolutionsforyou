@@ -16,16 +16,50 @@
     max-width: $contentContainer;
     margin: auto;
     padding: 0 20px 50px;
-    height: fit-content;
+    height: min-content;
     display: grid;
-    grid-template-columns: repeat(3, 32%);
-    grid-template-rows: repeat(2, 250px);
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(2, 250px); */
+    /* grid-template-rows: repeat(auto-fill, 250px); */
     gap: 2%;
+
+    a {
+        overflow: hidden;
+        border: 1px solid #6fbdff;
+        height: 250px;
+    }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1140px) {
     
     .projects-storefront {
-        grid-template-columns: repeat(2, 49%);
+
+        a {
+            height: 22vw;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .projects-storefront {
+        grid-template-columns: repeat(2, 1fr);
+
+        a {
+            height: 33vw;
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    
+    .projects-storefront {
+        grid-template-columns: 90%;
+        justify-content: center;
+        gap: 1%;
+
+        a {
+            height: 60vw;
+        }
     }
 }
