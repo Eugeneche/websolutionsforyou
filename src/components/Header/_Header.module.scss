@@ -11,7 +11,7 @@
         padding: 0 20px;
         display: grid;
         grid-template-columns: 57% 3% 18% 3% 3% 16%;
-        grid-template-rows: 12% 14% 12% 2% 32% 28%;
+        grid-template-rows: 5% 14% 12% 2% 32% 28%;
 
         .name {
             grid-area: 2/1/4/2;
@@ -42,7 +42,7 @@
 }
 
 .banner {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     height: 55px;
     background: yellow;
@@ -76,19 +76,48 @@
 
         .header-container {
 
+            .name {
+                font-size: 3vw;
+                line-height: normal;
+            }
+
             .hero {
                 font-size: 6vw;
             }
         }
     }
+}
 
+@media screen and (max-width: 768px) {
+    
     .banner {
-        height: 5vw;
+    
+        .banner-container {
+    
+            .call {
+                text-align: center;
+                font-size: calc(2.5vw + 3px);
+                line-height: normal;
+            }
+        }
+    }
+}
 
+@media screen and (max-width: 430px) {
+    
+    .banner {
+        height: 50px;
+    
         .banner-container {
 
             .fist {
-                height: 5vw;
+                height: 50px;
+            }
+    
+            .call {
+                text-align: center;
+                font-size: calc(2.5vw + 3px);
+                line-height: normal;
             }
         }
     }

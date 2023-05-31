@@ -20,7 +20,7 @@ const Header = () => {
             <div className={style.banner}>
                 <div className={style.bannerContainer}>
                     <img className={style.fist} src={fist} alt="fist for support for Ukraine"></img>
-                    <span className={style.call}>Stand with Ukraine! Help Ukraine defeat global evil!</span>
+                    <span className={style.call}>Stand&nbsp;with&nbsp;Ukraine! Help&nbsp;Ukraine&nbsp;defeat&nbsp;global&nbsp;evil!</span>
                     <a href="https://savelife.in.ua/en/donate-en/#donate-army-card-once" target="_blank" rel="noopener noreferrer">
                         <img className={style.fist} src={cba} alt="come back alive fund's logo"></img>
                     </a>
