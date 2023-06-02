@@ -42,7 +42,7 @@ const LanguagesSwitcher = () => {
 
   
   return (
-    <nav>
+    <div className={style.flags}>
       <Link to={`${path}`} hrefLang="en">
         <img className={style.flag} src={eng} alt="great britain flag"></img>
       </Link>
@@ -56,7 +56,7 @@ const LanguagesSwitcher = () => {
       <Link to={`/ru${path()}`} hrefLang="ru">
         Русский
       </Link> */}
-    </nav>
+    </div>
   )
 }
 

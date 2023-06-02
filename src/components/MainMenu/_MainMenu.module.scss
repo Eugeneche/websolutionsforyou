@@ -1,8 +1,12 @@
 @import '../../style/vars';
 
+nav {
+    height: 25px;
+}
+
 .main-menu {
     max-width: $headerContainer;
-    height: 50px;
+    height: fit-content;
     margin: auto;
     padding: 0 20px;
     display: flex;
@@ -11,7 +15,8 @@
     align-content: center;
 
     .pages {
-        text-transform: uppercase;     
+        text-transform: uppercase; 
+        margin: 13px 0;    
 
         a {
             text-decoration: none;
@@ -22,7 +27,38 @@
     }
 }
 
-a .flag {
-    height: 25px;
-    margin: 0 0 0 10px ;
+
+.flags {
+
+    .flag {
+        height: 25px;
+        margin: 13px 0 13px 10px ;
+    }
+}
+
+
+@media screen and (max-width: 430px) {
+
+    .main-menu {
+    
+        .pages {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+
+            a {
+                margin: 0;
+            }
+        }
+    }
+
+    .flags {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        .flag {
+            margin: 0 5px;
+        }
+    }
 }

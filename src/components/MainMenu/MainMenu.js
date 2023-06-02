@@ -20,9 +20,9 @@ const MainMenu = () => {
             <NavLink to="/projects">{projects}</NavLink>
             <NavLink to="/contacts">{contacts}</NavLink>
         </div>
-        <div>
-            <LanguagesSwitcher />
-        </div>
+
+        <LanguagesSwitcher />
+
     </nav>
   )
 }

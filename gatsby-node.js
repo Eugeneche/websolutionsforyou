@@ -76,7 +76,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
   query getProjects {
-      allFile(filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "mdx"}}) {
+      allFile(filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "mdx"}, name: {ne: "order"}}) {
         nodes {
           relativeDirectory
           childMdx {
