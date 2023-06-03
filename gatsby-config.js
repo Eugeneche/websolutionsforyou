@@ -19,6 +19,12 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-image`,
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        duration: 1000
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/config/translations`,

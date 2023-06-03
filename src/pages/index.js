@@ -14,7 +14,18 @@ import LocalizedLink from "../components/localizedLink"
 const IndexPage = ({data}) => {
 
   const projectsArray = data.allFile.nodes
+  const order = data.file.childMdx.frontmatter.order
+  const orderedProjectsArray = []
 
+  order.forEach(projectName => {
+    projectsArray.forEach(project => {
+      if (projectName === project.relativeDirectory) {
+        orderedProjectsArray.push(project)
+      } 
+      return orderedProjectsArray
+    })
+  })
+  
   const {
     index_H2_1,
     chapter_1,
@@ -27,14 +38,12 @@ const IndexPage = ({data}) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        //console.log(entry.target.children)
         setIsIntersecting(entry.isIntersecting)
       },
       { threshold: 0.2 }
     )
 
     observer.observe(ref.current)
-    console.log(ref.current)
     return () => observer.disconnect()
 
   }, [isIntersecting])
@@ -43,13 +52,10 @@ const IndexPage = ({data}) => {
     if (isIntersecting) {
 
       ref.current.querySelectorAll(`.before-load`).forEach((el) => {
-        console.log('a')
+
         el.classList.remove(`before-load`)
         el.classList.add(`after-load`)
       })
-/*       ref.current.querySelectorAll(`.a`).forEach((el) => {
-        el.classList.add(`.after-load`)
-      }) */
     } 
   }, [isIntersecting])
   
@@ -63,13 +69,13 @@ const IndexPage = ({data}) => {
           </div>
         </section>
 
-        <section className={styles.projects}>
+        <section id="projects" className={styles.projects}>
           <div className={styles.container}>
             <h2>{projects}</h2>
           </div>
           
           <div className={styles.projectsStorefront} ref={ref}> 
-            {projectsArray.map(project => {
+            {orderedProjectsArray.map(project => {
               return (  
                  
                   <LocalizedLink key={project.id} className="before-load" to={`/${project.relativeDirectory.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[" "]/g, "-").toLowerCase()}`}>           
@@ -92,12 +98,21 @@ const IndexPage = ({data}) => {
 
 export const query = graphql`
   query {
-    allFile(filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}) {
+    allFile(
+      filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}
+    ) {
       nodes {
         relativeDirectory
         id
         childImageSharp {
           gatsbyImageData
+        }
+      }
+    }
+    file(name: {eq: "order"}) {
+      childMdx {
+        frontmatter {
+          order
         }
       }
     }

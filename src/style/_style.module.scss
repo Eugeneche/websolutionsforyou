@@ -1,5 +1,11 @@
 @import './vars';
 
+h2 {
+    text-transform: uppercase;
+    color: #004887;
+    font-weight: 400;
+}
+
 .container {
     max-width: $contentContainer;
     margin: auto;
@@ -10,6 +16,7 @@
     width: 100%;
     height: fit-content;
     background: #effbff;
+    padding: 1px 0;
 }
 
 .projects-storefront {
@@ -29,6 +36,27 @@
         height: 250px;
     }
 }
+
+/* PROJECTS TEMPLATE */
+
+.projects-header {
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #100097;
+}
+
+.projects-images {
+    width: 80%;
+    margin: auto;
+}
+
+.project-image {
+    border: 1px solid #bee1ff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #e1e1e1;
+}
+
+/* END OF PROJECTS TEMPLATE */
 
 @media screen and (max-width: 1140px) {
     

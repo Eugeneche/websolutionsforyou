@@ -7,26 +7,29 @@ import { GatsbyImage } from "gatsby-plugin-image"
 // The normal <a> tag is modified here (so that internal links use gatsby-link/LocalizedLink
 // More info:
 // https://www.gatsbyjs.com/docs/mdx/customizing-components/
-const Project = ({data/* , pageContext */}) => {
+const Project = ({data, pageContext, children}) => {
   
   //console.log(pageContext)
 
-  const images = data.allFile.nodes
-  console.log(images)
+  //const images = data.allFile.nodes
+  const imageCover = data.allFile.nodes.filter(node => node.name === `cover`)
+  const imageAll = data.allFile.nodes.filter(node => node.name === `all`)
+  //console.log(data)
   return (
     <>
       <div className={styles.container}> 
-        <h1>{data.mdx.frontmatter.title}</h1>
-        <div className={styles.images}>
-          {images.map(image => {
-            return (
-              <GatsbyImage 
-                key={image.childImageSharp.id}
-                image={image.childImageSharp.gatsbyImageData}
-                alt="img"
-              />
-            )
-          })}
+        <h1  className={styles.projectsHeader}>{data.mdx.frontmatter.title}</h1>
+        <div className={styles.projectsImages}>
+          <GatsbyImage 
+            image={imageCover[0].childImageSharp.gatsbyImageData}
+            className={styles.projectImage}
+            alt={`Website for ${data.mdx.frontmatter.title} general view`}
+          />
+          <GatsbyImage 
+            image={imageAll[0].childImageSharp.gatsbyImageData}
+            className={styles.projectImage}
+            alt={`Website for ${data.mdx.frontmatter.title} view in devices`}
+          />
         </div>
         <p>{data.mdx.body}</p>
       </div>
@@ -48,6 +51,7 @@ query Project($directory: String, $locale: String, $id: String) {
     filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, relativeDirectory: {eq: $directory}}
   ) {
     nodes {
+      name
       childImageSharp {
         gatsbyImageData
         id
@@ -55,6 +59,7 @@ query Project($directory: String, $locale: String, $id: String) {
     }
   }
   mdx(fields: {locale: {eq: $locale}}, id: {eq: $id}) {
+    body
     frontmatter {
       seo_description
       seo_title
