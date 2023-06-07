@@ -43,6 +43,7 @@ h2 {
     font-weight: 500;
     text-transform: uppercase;
     color: #100097;
+    padding-top: 20px;
 }
 
 .projects-images {
@@ -54,6 +55,24 @@ h2 {
     border: 1px solid #bee1ff;
     margin-bottom: 20px;
     box-shadow: 0 0 10px #e1e1e1;
+}
+
+.content-from-mdx {
+    padding-bottom: 30px;
+
+    ul {
+        /* margin: 0; */
+        list-style: circle;
+
+        li {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    a {
+        color: #004887;
+    }
 }
 
 /* END OF PROJECTS TEMPLATE */

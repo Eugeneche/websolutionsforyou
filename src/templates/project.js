@@ -31,7 +31,7 @@ const Project = ({data, pageContext, children}) => {
             alt={`Website for ${data.mdx.frontmatter.title} view in devices`}
           />
         </div>
-        <p>{data.mdx.body}</p>
+        <div className={styles.contentFromMdx} dangerouslySetInnerHTML={{__html: `${data.mdx.body}`}} />
       </div>
     </>
 )}
