@@ -21,7 +21,7 @@ const Seo = ({ description, title, children, imageUrl, imageAlt }) => {
         }
         ogImageDefault: file(relativePath: {eq: "websolutions.jpg"}) {
           childImageSharp {
-            original {
+            fixed {
               src
             }
           }
@@ -37,8 +37,8 @@ const Seo = ({ description, title, children, imageUrl, imageAlt }) => {
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
       <meta property="twitter:image:alt" content={imageAlt || "Web solutions studio"} />
-      <meta property="og:image" content={constructUrl(data.site.siteMetadata.siteUrl, data.ogImageDefault?.childImageSharp?.original?.src)} />
-      <meta name="twitter:image" content={constructUrl(data.site.siteMetadata.siteUrl, data.ogImageDefault?.childImageSharp?.original?.src)} />
+      <meta property="og:image" content={constructUrl(data.site.siteMetadata.siteUrl, data.ogImageDefault?.childImageSharp?.fixed?.src)} />
+      <meta name="twitter:image" content={constructUrl(data.site.siteMetadata.siteUrl, data.ogImageDefault?.childImageSharp?.fixed?.src)} />
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
