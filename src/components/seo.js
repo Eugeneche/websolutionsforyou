@@ -8,8 +8,8 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Seo({ description, title, children }) {
-  const { site } = useStaticQuery(
+const Seo = ({ description, title, children, imageUrl, imageAlt }) => {
+  const data = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,27 +19,41 @@ function Seo({ description, title, children }) {
             author
           }
         }
+        ogImageDefault: file(relativePath: {eq: "websolutions.jpg"}) {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || data.site.siteMetadata.description
+  const defaultTitle = data.site.siteMetadata?.title
 
   return (
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <meta property="twitter:image:alt" content={imageAlt || "Web solutions studio"} />
+      <meta property="og:image" content={constructUrl(data.site.siteMetadata.siteUrl, data.ogImageDefault?.childImageSharp?.original?.src)} />
+      <meta name="twitter:image" content={constructUrl(data.site.siteMetadata.siteUrl, data.ogImageDefault?.childImageSharp?.original?.src)} />
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
+      <meta name="twitter:creator" content={data.site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       {children}
     </>
   )
 }
+
+const constructUrl = (baseUrl, path) =>
+  (!baseUrl || !path) ? null : `${baseUrl}${path}`
+
 
 export default Seo
