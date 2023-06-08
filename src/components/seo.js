@@ -22,7 +22,7 @@ const Seo = ({ description, title, children, imageUrl, imageAlt }) => {
         }
         ogImageDefault: file(relativePath: {eq: "websolutions.jpg"}) {
           childImageSharp {
-            fixed(height: 260, width: 260) {
+            fixed {
               src
             }
           }
