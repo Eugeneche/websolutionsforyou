@@ -33,8 +33,7 @@ const Seo = ({ description, title, children, imageUrl, imageAlt }) => {
 
   const metaDescription = description || data.site.siteMetadata.description
   const defaultTitle = data.site.siteMetadata?.title
-  console.log(data.site.siteMetadata.siteUrl)
-  console.log(data.ogImageDefault?.childImageSharp?.fixed?.src)
+
   return (
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>

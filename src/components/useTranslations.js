@@ -32,6 +32,8 @@ const query = graphql`
           name
           childTranslationsJson {
             headerHero
+            seo_title
+            seo_description
             home
             projects
             contacts

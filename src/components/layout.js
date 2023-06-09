@@ -12,8 +12,6 @@ import Footer from "../components/Footer/Footer"
 import MdxLink from "./mdxLink"
 
 import "./layout.css"
-//import * as customStyles from "../style/_style.module.scss"
-
 
 const LocaleContext = React.createContext()
 
@@ -24,36 +22,13 @@ const LocaleContext = React.createContext()
 const Layout = ({ children, pageContext: { locale } }) => (
   <LocaleContext.Provider value={{ locale }}>
     <div className="global-wrapper">
-      {/* <header className="global-header"> */}
-        <MainMenu />
-      {/* </header> */}
+      <MainMenu locale={locale} />
       <MDXProvider components={{ a: MdxLink }}>
         <main>{children}</main>
         <Footer />
-{/*         <footer>
-        <div>
-          © 2022 - {new Date().getFullYear()}
-        </div>
-      </footer>  */}
       </MDXProvider>
     </div>
   </LocaleContext.Provider>
 )
 
 export { Layout, LocaleContext }
-
-/* const Layout = ({ children }) => {
-
-  return (
-    <>
-      <main>{children}</main>
-      <footer>
-        <div className={customStyles.container}>
-          © 2022 - {new Date().getFullYear()}
-        </div>
-      </footer>     
-    </>
-  )
-}
-
-export default Layout */
