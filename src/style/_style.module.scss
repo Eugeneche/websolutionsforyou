@@ -26,14 +26,24 @@ h2 {
     height: min-content;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* grid-template-rows: repeat(2, 250px); */
-    /* grid-template-rows: repeat(auto-fill, 250px); */
     gap: 2%;
 
     a {
         overflow: hidden;
         border: 1px solid #6fbdff;
         height: 250px;
+    }
+}
+
+/* contacts */
+
+.write-to-email {
+    padding-bottom: 30px;
+    margin: 50px 0 0 0;
+
+    a {
+        color: #004887;
+        font-family: Helvetica, Arial, sans-serif;
     }
 }
 
@@ -61,7 +71,6 @@ h2 {
     padding-bottom: 30px;
 
     ul {
-        /* margin: 0; */
         list-style: circle;
 
         li {

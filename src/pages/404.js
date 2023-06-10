@@ -1,15 +1,22 @@
 import * as React from "react"
+import useTranslations from "../components/useTranslations"
+import * as styles from "../style/_style.module.scss"
 
-//import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const NotFoundPage = () => {
+
+  const {
+    four_o_four_title,
+    four_o_four_text
+  } = useTranslations()
+
  return (
   <>
-    {/* <Layout> */}
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    {/* </Layout> */}
+    <div className={styles.container}>
+      <h1>{four_o_four_title}</h1>
+      <p>{four_o_four_text}</p>
+    </div>   
   </>
  )
 }

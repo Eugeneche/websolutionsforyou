@@ -1,6 +1,4 @@
 import React from "react"
-//import { Link } from "gatsby"
-//import LocalizedLink from "../localizedLink"
 import useTranslations from "../useTranslations"
 import LanguagesSwitcher from "./LanguagesSwitcher"
 import NavLink from "./NavLink"
@@ -8,7 +6,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 import * as style from "./_MainMenu.module.scss"
 
 const MainMenu = ({locale}) => {
-console.log(locale)
+
     const { home,
             projects,
             contacts

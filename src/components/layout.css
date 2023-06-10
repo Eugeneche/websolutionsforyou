@@ -235,6 +235,10 @@ html, body {
 }
 
 #gatsby-focus-wrapper {
+  height: 100% !important;
+}
+
+.global-wrapper {
   display: flex;
   height: 100%;
   flex-direction: column;

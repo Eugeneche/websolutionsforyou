@@ -39,6 +39,11 @@ const query = graphql`
             contacts
             index_H2_1
             chapter_1
+            index_H2_2
+            chapter_2_1
+            chapter_2_2
+            chapter_2_3
+            chapter_2_4
             your_name
             your_message
             your_email
@@ -48,6 +53,7 @@ const query = graphql`
             phone
             email
             message
+            write_to_email
             four_o_four_title
             four_o_four_text
           }

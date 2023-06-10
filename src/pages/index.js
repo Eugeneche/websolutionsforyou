@@ -2,16 +2,12 @@ import React, { useState, useRef, useEffect } from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-//import Seo from "../components/seo"
 import Header from "../components/Header/Header"
 import useTranslations from "../components/useTranslations"
 import * as styles from "../style/_style.module.scss"
 import "../style/s.css"
 import LocalizedLink from "../components/localizedLink"
 import Head from "../components/Head"
-
-//import { LocaleContext } from "../components/layout"
-//import { useContext } from "react"
 
 
 const IndexPage = ({ data }) => {
@@ -32,6 +28,11 @@ const IndexPage = ({ data }) => {
   const {
     index_H2_1,
     chapter_1,
+    index_H2_2,
+    chapter_2_1,
+    chapter_2_2,
+    chapter_2_3,
+    chapter_2_4,
     projects,
     seo_title,
     seo_description
@@ -72,6 +73,11 @@ const IndexPage = ({ data }) => {
         <div className={styles.container}> 
           <h2>{index_H2_1}</h2>
           <p>{chapter_1}</p>
+          <h2>{index_H2_2}</h2>
+          <p>{chapter_2_1}</p>
+          <p>{chapter_2_2}</p>
+          <p>{chapter_2_3}</p>
+          <p>{chapter_2_4}</p>
         </div>
       </section>
 
