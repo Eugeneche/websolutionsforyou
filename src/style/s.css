@@ -1,6 +1,5 @@
 .before-load {
     position: relative;
-    /* border: 1px solid #6fbdff; */
     overflow: hidden;
 }
 
@@ -18,10 +17,18 @@
 
 .after-load {
     position: relative;
-    /* border: 1px solid #6fbdff; */
     top: 0;
-    transition: top ease 0.5s;
+    transition: top 0.5s, scale 0.5s;
     overflow: hidden;
+}
+
+.after-load:hover {
+    transform: scale(1.005);
+    transition: all 0.3s;
+}
+
+.project-image:hover {
+    opacity: 0.7 !important;
 }
 
 @media screen and (max-width: 768px) {

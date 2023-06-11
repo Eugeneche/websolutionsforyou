@@ -95,7 +95,7 @@ const IndexPage = ({ data }) => {
                   image={project.childImageSharp.gatsbyImageData}
                   alt="project"
                   objectPosition="50% 0%"
-                  /* style={{position: "static"}} */
+                  imgClassName="project-image"
                 />       
               </LocalizedLink>                 
             )
