@@ -20,7 +20,7 @@ const Seo = ({ description, title, children, imageUrl, imageAlt }) => {
             siteUrl
           }
         }
-        ogImageDefault: file(relativePath: {eq: "websolutions.jpg"}) {
+        ogImageDefault: file(relativePath: {eq: "preview.jpg"}) {
           childImageSharp {
             fixed {
               src
