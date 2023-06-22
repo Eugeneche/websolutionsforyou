@@ -7,8 +7,8 @@ import useTranslations from "../components/useTranslations"
 import * as styles from "../style/_style.module.scss"
 import "../style/s.css"
 import LocalizedLink from "../components/localizedLink"
-import Head from "../components/Head"
-
+//import Head from "../components/Head"
+import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {
 
@@ -67,7 +67,7 @@ const IndexPage = ({ data }) => {
   
   return (
     <>
-      <Head title={seo_title} description={seo_description} />
+      {/* <Head title={seo_title} description={seo_description} /> */}
       <Header />
       <section>
         <div className={styles.container}> 
@@ -107,56 +107,46 @@ const IndexPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query {
-    allFile(
-      filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}
-    ) {
-      nodes {
-        relativeDirectory
-        id
-        childImageSharp {
-          gatsbyImageData
-        }
-      }
-    }
-    file(name: {eq: "order"}) {
-      childMdx {
-        frontmatter {
-          order
-        }
-      }
-    }
-    allTranslationsJson {
-      nodes {
-        seo_title
-        seo_description
+query ($locale: String) {
+  allFile(
+    filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}
+  ) {
+    nodes {
+      relativeDirectory
+      id
+      childImageSharp {
+        gatsbyImageData
       }
     }
   }
+  file(name: {eq: "order"}) {
+    childMdx {
+      frontmatter {
+        order
+      }
+    }
+  }
+  mdx(
+    fields: {locale: {eq: $locale}}
+    frontmatter: {index_seo_description: {ne: null}, index_seo_title: {ne: null}}
+  ) {
+    frontmatter {
+      index_seo_description
+      index_seo_title
+    }
+  }
+}
 `
-
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-
-//const LocaleContext = React.createContext()
 
 
 
 export default IndexPage
 
-/* export const Head = ({ pageContext: {locale} }) => {
-  const { text, setText } = useContext(LocaleContext)
-  const {
-    seo_title,
-    seo_description
-  } = useTranslations()
-console.log(locale)
+export const Head = ({ data }) => {
+
   return ( 
     <>
-      <Seo title="2017" />
+      <Seo title={data.mdx.frontmatter.index_seo_title} description={data.mdx.frontmatter.index_seo_description}/>
     </>
   )
-} */
+}
