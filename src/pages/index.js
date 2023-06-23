@@ -104,6 +104,15 @@ const IndexPage = ({ data }) => {
   )
 }
 
+export const Head = ({ data }) => {
+  console.log(data.mdx.frontmatter.index_seo_title)
+    return ( 
+      <>
+        <Seo title={data.mdx.frontmatter.index_seo_title} description={data.mdx.frontmatter.index_seo_description}/>
+      </>
+    )
+  }
+
 export const query = graphql`
 query ($locale: String) {
   allFile(
@@ -139,12 +148,3 @@ query ($locale: String) {
 
 
 export default IndexPage
-
-export const Head = ({ data }) => {
-console.log(data.mdx.frontmatter.index_seo_title)
-  return ( 
-    <>
-      <Seo title={data.mdx.frontmatter.index_seo_title} description={data.mdx.frontmatter.index_seo_description}/>
-    </>
-  )
-}
