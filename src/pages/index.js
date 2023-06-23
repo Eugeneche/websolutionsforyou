@@ -10,6 +10,8 @@ import LocalizedLink from "../components/localizedLink"
 //import Head from "../components/Head"
 import Seo from "../components/seo"
 
+//import { LocaleContext } from "../components/layout"
+
 const IndexPage = ({ data }) => {
 
   const projectsArray = data.allFile.nodes
@@ -104,17 +106,31 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export const Head = ({ data }) => {
-  console.log(data.mdx.frontmatter.index_seo_title)
+export const Head = ({ data, pageContext: { locale } }) => {
+
+  const localData = data.allMdx.nodes
+  //const [title, setTitle] = useState('')
+  //const [description, setDescription] = useState('')
+let title, description
+  localData.forEach(el => {
+    console.log(el.fields.locale)
+    console.log(el.frontmatter.index_seo_title)
+    if (el.fields.locale === locale) {
+      title = el.frontmatter.index_seo_title
+      description = el.frontmatter.index_seo_description
+    }
+  })
+  console.log(locale)
+  //console.log(data.allMdx.nodes)
     return ( 
       <>
-        <Seo title={data.mdx.frontmatter.index_seo_title} description={data.mdx.frontmatter.index_seo_description}/>
+        <Seo title={title} description={description}/>
       </>
     )
   }
 
 export const query = graphql`
-query ($locale: String) {
+query {
   allFile(
     filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}
   ) {
@@ -133,13 +149,17 @@ query ($locale: String) {
       }
     }
   }
-  mdx(
-    fields: {locale: {eq: $locale}}
-    frontmatter: {index_seo_description: {ne: null}, index_seo_title: {ne: null}}
+  allMdx(
+    filter: {frontmatter: {index_seo_description: {ne: null}, index_seo_title: {ne: null}}}
   ) {
-    frontmatter {
-      index_seo_description
-      index_seo_title
+    nodes {
+      fields {
+        locale
+      }
+      frontmatter {
+        index_seo_description
+        index_seo_title
+      }
     }
   }
 }
