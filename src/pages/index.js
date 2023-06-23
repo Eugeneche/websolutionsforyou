@@ -33,9 +33,7 @@ const IndexPage = ({ data }) => {
     chapter_2_2,
     chapter_2_3,
     chapter_2_4,
-    projects,
-    seo_title,
-    seo_description
+    projects
   } = useTranslations()
 
   const [isIntersecting, setIsIntersecting] = useState(false)
@@ -143,7 +141,7 @@ query ($locale: String) {
 export default IndexPage
 
 export const Head = ({ data }) => {
-
+console.log(data.mdx.frontmatter.index_seo_title)
   return ( 
     <>
       <Seo title={data.mdx.frontmatter.index_seo_title} description={data.mdx.frontmatter.index_seo_description}/>
