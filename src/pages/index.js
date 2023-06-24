@@ -144,25 +144,22 @@ query {
 
 export default IndexPage
 
-export const Head = ({ data, pageContext: { locale } }) => {
+export const Head = ({ pageContext: { locale } }) => {
 
   const localData = data.allMdx.nodes
-  //const [title, setTitle] = useState('')
-  //const [description, setDescription] = useState('')
-  let title, description
+/*   let title, description
   localData.forEach(el => {
-    //console.log(el.fields.locale)
-    //console.log(el.frontmatter.index_seo_title)
     if (el.fields.locale === locale) {
       title = el.frontmatter.index_seo_title
       description = el.frontmatter.index_seo_description
     }
-  })
-  //console.log(locale)
+  }) */
+  console.log(locale)
   //console.log(data.allMdx.nodes)
   return ( 
     <>
-      <Seo title={title} description={description}/>
+    <Seo title="Website development - best solutions, favorable price" description="Development of modern fast websites. SEO settings, responsive design for all types of devices"/>
+      {/* <Seo title={title} description={description}/> */}
     </>
   )
 }
