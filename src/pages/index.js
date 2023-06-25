@@ -146,3 +146,17 @@ export const query = graphql`
 
 
 export default IndexPage
+
+/* export const Head = ({ pageContext: {locale} }) => {
+  const { text, setText } = useContext(LocaleContext)
+  const {
+    seo_title,
+    seo_description
+  } = useTranslations()
+console.log(locale)
+  return ( 
+    <>
+      <Seo title="2017" />
+    </>
+  )
+} */
