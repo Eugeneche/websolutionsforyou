@@ -106,6 +106,29 @@ const IndexPage = ({ data }) => {
   )
 }
 
+
+export default IndexPage
+
+export const Head = () => {
+
+  const localData = data.allMdx.nodes
+/*   let title, description
+  localData.forEach(el => {
+    if (el.fields.locale === locale) {
+      title = el.frontmatter.index_seo_title
+      description = el.frontmatter.index_seo_description
+    }
+  }) */
+  //console.log(locale)
+  //console.log(data.allMdx.nodes)
+  return ( 
+    <>
+    <Seo title="Website development - best solutions, favorable price" description="Development of modern fast websites. SEO settings, responsive design for all types of devices"/>
+      {/* <Seo title={title} description={description}/> */}
+    </>
+  )
+}
+
 export const query = graphql`
 query {
   allFile(
@@ -141,25 +164,3 @@ query {
   }
 }
 `
-
-export default IndexPage
-
-export const Head = ({ pageContext: { locale } }) => {
-
-  const localData = data.allMdx.nodes
-/*   let title, description
-  localData.forEach(el => {
-    if (el.fields.locale === locale) {
-      title = el.frontmatter.index_seo_title
-      description = el.frontmatter.index_seo_description
-    }
-  }) */
-  console.log(locale)
-  //console.log(data.allMdx.nodes)
-  return ( 
-    <>
-    <Seo title="Website development - best solutions, favorable price" description="Development of modern fast websites. SEO settings, responsive design for all types of devices"/>
-      {/* <Seo title={title} description={description}/> */}
-    </>
-  )
-}
