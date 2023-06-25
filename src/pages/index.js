@@ -7,10 +7,8 @@ import useTranslations from "../components/useTranslations"
 import * as styles from "../style/_style.module.scss"
 import "../style/s.css"
 import LocalizedLink from "../components/localizedLink"
-//import Head from "../components/Head"
-import Seo from "../components/seo"
+import Head from "../components/Head"
 
-//import { LocaleContext } from "../components/layout"
 
 const IndexPage = ({ data }) => {
 
@@ -35,7 +33,9 @@ const IndexPage = ({ data }) => {
     chapter_2_2,
     chapter_2_3,
     chapter_2_4,
-    projects
+    projects,
+    seo_title,
+    seo_description
   } = useTranslations()
 
   const [isIntersecting, setIsIntersecting] = useState(false)
@@ -67,7 +67,7 @@ const IndexPage = ({ data }) => {
   
   return (
     <>
-      {/* <Head title={seo_title} description={seo_description} /> */}
+      <Head title={seo_title} description={seo_description} />
       <Header />
       <section>
         <div className={styles.container}> 
@@ -106,61 +106,43 @@ const IndexPage = ({ data }) => {
   )
 }
 
+export const query = graphql`
+  query {
+    allFile(
+      filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}
+    ) {
+      nodes {
+        relativeDirectory
+        id
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+    file(name: {eq: "order"}) {
+      childMdx {
+        frontmatter {
+          order
+        }
+      }
+    }
+    allTranslationsJson {
+      nodes {
+        seo_title
+        seo_description
+      }
+    }
+  }
+`
+
+/**
+ * Head export to define metadata for the page
+ *
+ * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
+ */
+
+//const LocaleContext = React.createContext()
+
+
 
 export default IndexPage
-
-export const Head = () => {
-
-  const localData = data.allMdx.nodes
-/*   let title, description
-  localData.forEach(el => {
-    if (el.fields.locale === locale) {
-      title = el.frontmatter.index_seo_title
-      description = el.frontmatter.index_seo_description
-    }
-  }) */
-  //console.log(locale)
-  //console.log(data.allMdx.nodes)
-  return ( 
-    <>
-    <Seo title="Website development - best solutions, favorable price" description="Development of modern fast websites. SEO settings, responsive design for all types of devices"/>
-      {/* <Seo title={title} description={description}/> */}
-    </>
-  )
-}
-
-export const query = graphql`
-query {
-  allFile(
-    filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}
-  ) {
-    nodes {
-      relativeDirectory
-      id
-      childImageSharp {
-        gatsbyImageData
-      }
-    }
-  }
-  file(name: {eq: "order"}) {
-    childMdx {
-      frontmatter {
-        order
-      }
-    }
-  }
-  allMdx(
-    filter: {frontmatter: {index_seo_description: {ne: null}, index_seo_title: {ne: null}}}
-  ) {
-    nodes {
-      fields {
-        locale
-      }
-      frontmatter {
-        index_seo_description
-        index_seo_title
-      }
-    }
-  }
-}
-`
