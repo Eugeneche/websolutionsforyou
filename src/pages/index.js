@@ -7,7 +7,8 @@ import useTranslations from "../components/useTranslations"
 import * as styles from "../style/_style.module.scss"
 import "../style/s.css"
 import LocalizedLink from "../components/localizedLink"
-import Head from "../components/Head"
+//import Head from "../components/Head"
+import Seo from "../components/seo"
 
 
 const IndexPage = ({ data }) => {
@@ -34,8 +35,8 @@ const IndexPage = ({ data }) => {
     chapter_2_3,
     chapter_2_4,
     projects,
-    seo_title,
-    seo_description
+/*     seo_title,
+    seo_description */
   } = useTranslations()
 
   const [isIntersecting, setIsIntersecting] = useState(false)
@@ -67,7 +68,7 @@ const IndexPage = ({ data }) => {
   
   return (
     <>
-      <Head title={seo_title} description={seo_description} />
+      {/* <Head title={seo_title} description={seo_description} /> */}
       <Header />
       <section>
         <div className={styles.container}> 
@@ -147,16 +148,12 @@ export const query = graphql`
 
 export default IndexPage
 
-/* export const Head = ({ pageContext: {locale} }) => {
-  const { text, setText } = useContext(LocaleContext)
-  const {
-    seo_title,
-    seo_description
-  } = useTranslations()
-console.log(locale)
+export const Head = () => {
+
+//console.log(locale)
   return ( 
     <>
-      <Seo title="2017" />
+      <Seo title="1806" />
     </>
   )
-} */
+}
