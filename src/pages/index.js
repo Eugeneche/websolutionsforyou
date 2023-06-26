@@ -157,12 +157,21 @@ export default IndexPage
 
 export const Head = ({ data, pageContext: { locale } }) => {
 
+  const localData = data.allMdx.nodes
+  let title, description
+
+  localData.forEach(el => {
+    if (el.fields.locale === locale) {
+      title = el.frontmatter.index_seo_title
+      description = el.frontmatter.index_seo_description
+    }
+  })
 //console.log(data.allMdx.nodes)
 console.log(data)
 console.log(locale)
   return ( 
     <>
-      <Seo title="1806" />
+      <Seo title={title} description={description} />
     </>
   )
 }
