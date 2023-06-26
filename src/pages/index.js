@@ -148,9 +148,10 @@ export const query = graphql`
 
 export default IndexPage
 
-export const Head = ({data}) => {
+export const Head = ({data, pageContext: { locale }}) => {
 
 console.log(data)
+console.log(locale)
   return ( 
     <>
       <Seo title="1806" />
