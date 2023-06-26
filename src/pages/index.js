@@ -148,9 +148,9 @@ export const query = graphql`
 
 export default IndexPage
 
-export const Head = () => {
+export const Head = ({data}) => {
 
-//console.log(locale)
+console.log(data)
   return ( 
     <>
       <Seo title="1806" />
