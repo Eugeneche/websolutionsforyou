@@ -127,19 +127,6 @@ export const query = graphql`
         }
       }
     }
-    allMdx(
-      filter: {frontmatter: {index_seo_description: {ne: null}, index_seo_title: {ne: null}}}
-    ) {
-      nodes {
-        frontmatter {
-          index_seo_description
-          index_seo_title
-        }
-        fields {
-          locale
-        }
-      }
-    }
   }
 `
 
@@ -157,7 +144,8 @@ export default IndexPage
 
 export const Head = ({ data, pageContext: { locale } }) => {
 
-console.log(data.allMdx.nodes)
+//console.log(data.allMdx.nodes)
+console.log(data)
 console.log(locale)
   return ( 
     <>
