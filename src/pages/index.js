@@ -34,7 +34,7 @@ const IndexPage = ({ data }) => {
     chapter_2_2,
     chapter_2_3,
     chapter_2_4,
-    projects,
+    projects
 /*     seo_title,
     seo_description */
   } = useTranslations()
@@ -109,24 +109,37 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allFile(
-      filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}
-    ) {
-      nodes {
-        relativeDirectory
-        id
-        childImageSharp {
-          gatsbyImageData
-        }
+allFile(
+    filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, name: {eq: "cover"}}
+  ) {
+    nodes {
+      relativeDirectory
+      id
+      childImageSharp {
+        gatsbyImageData
       }
     }
-    file(name: {eq: "order"}) {
-      childMdx {
-        frontmatter {
-          order
-        }
+  }
+  file(name: {eq: "order"}) {
+    childMdx {
+      frontmatter {
+        order
       }
     }
+  }
+  allMdx(
+    filter: {frontmatter: {index_seo_description: {ne: null}, index_seo_title: {ne: null}}}
+  ) {
+    nodes {
+      frontmatter {
+        index_seo_description
+        index_seo_title
+      }
+      fields {
+        locale
+      }
+    }
+  }
   }
 `
 
