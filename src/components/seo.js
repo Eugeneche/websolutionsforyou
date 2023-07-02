@@ -65,7 +65,7 @@ const Seo = ({ description, title, children, imageUrl, imageAlt }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       <script type="text/javascript" >{yandexCode}</script>     
-      <noscript><div><img src="https://mc.yandex.ru/watch/94176286" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+      <noscript><div><img src="https://mc.yandex.ru/watch/94176286" style={{position:"absolute", left:"-9999px"}} alt="" /></div></noscript>
       {children}
     </>
   )
