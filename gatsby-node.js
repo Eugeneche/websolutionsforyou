@@ -8,7 +8,7 @@ const {
 
 const dotenv = require('dotenv')
 const envVars = dotenv.config().parsed
-
+console.log(envVars)
 const envKeys = Object.keys(envVars).reduce((acc, env) => {
   acc[`process.env.${env}`] = JSON.stringify(envVars[env])
   return acc

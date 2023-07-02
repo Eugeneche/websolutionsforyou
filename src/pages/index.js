@@ -7,7 +7,6 @@ import useTranslations from "../components/useTranslations"
 import * as styles from "../style/_style.module.scss"
 import "../style/s.css"
 import LocalizedLink from "../components/localizedLink"
-//import Head from "../components/Head"
 import Seo from "../components/seo"
 
 
@@ -35,8 +34,6 @@ const IndexPage = ({ data }) => {
     chapter_2_3,
     chapter_2_4,
     projects
-/*     seo_title,
-    seo_description */
   } = useTranslations()
 
   const [isIntersecting, setIsIntersecting] = useState(false)
@@ -68,7 +65,6 @@ const IndexPage = ({ data }) => {
   
   return (
     <>
-      {/* <Head title={seo_title} description={seo_description} /> */}
       <Header />
       <section>
         <div className={styles.container}> 
@@ -166,9 +162,7 @@ export const Head = ({ data, pageContext: { locale } }) => {
       description = el.frontmatter.index_seo_description
     }
   })
-//console.log(data.allMdx.nodes)
-console.log(data)
-console.log(locale)
+  
   return ( 
     <>
       <Seo title={title} description={description} />
