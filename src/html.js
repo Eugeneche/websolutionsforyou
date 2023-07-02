@@ -23,7 +23,7 @@ export default function HTML(props) {
             k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
          
-            ym(${process.env.METRIKA_TRACKING_ID}, "init", {
+            ym(94176286, "init", {
                  clickmap:true,
                  trackLinks:true,
                  accurateTrackBounce:true,
