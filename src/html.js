@@ -12,9 +12,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-      </head>
-      <body {...props.bodyAttributes}>
-      <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -32,6 +30,8 @@ export default function HTML(props) {
             `,
           }}
         />
+      </head>
+      <body {...props.bodyAttributes}>
         {props.preBodyComponents}
         <div
           key={`body`}
