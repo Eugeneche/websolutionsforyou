@@ -6,6 +6,23 @@ const {
   removeTrailingSlash,
 } = require(`./src/utils/gatsby-node-helpers`)
 
+const dotenv = require('dotenv')
+const envVars = dotenv.config().parsed
+
+const envKeys = Object.keys(envVars).reduce((acc, env) => {
+  acc[`process.env.${env}`] = JSON.stringify(envVars[env])
+  return acc
+}, {}); // { SOME_ENV_VAR: 'SOME_VALUE', ... }
+
+exports.onCreateWebpackConfig = ({ stage, rules, loaders, plugins, actions }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      // Add the environment variables to webpack.DefinePlugin with define().
+      plugins.define(envKeys)
+    ]
+  })
+}
+
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
