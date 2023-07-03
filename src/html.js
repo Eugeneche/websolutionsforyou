@@ -12,7 +12,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <script
+        <script type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
             (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -30,6 +30,7 @@ export default function HTML(props) {
             `,
           }}
         />
+        <noscript><div><img src="https://mc.yandex.ru/watch/94176286" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
