@@ -9,6 +9,7 @@
     "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.2.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
+    "gatsby-plugin-google-gtag": "^5.11.0",
     "gatsby-plugin-image": "^3.2.0",
     "gatsby-plugin-manifest": "^5.2.0",
     "gatsby-plugin-mdx": "^5.9.0",
