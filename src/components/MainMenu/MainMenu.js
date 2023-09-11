@@ -14,6 +14,7 @@ const MainMenu = ({locale}) => {
 
   return (
     <nav className={style.mainMenu}>
+      <div className={style.container}>
         <div className={style.pages}>
             <NavLink to="/">{home}</NavLink>
             <AnchorLink to={locale === `en` ? `/#projects` : `/${locale}/#projects`}>{projects}</AnchorLink>
@@ -21,7 +22,7 @@ const MainMenu = ({locale}) => {
         </div>
 
         <LanguagesSwitcher />
-
+      </div>
     </nav>
   )
 }

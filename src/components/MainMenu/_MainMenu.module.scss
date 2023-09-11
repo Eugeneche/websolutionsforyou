@@ -5,15 +5,27 @@ nav {
 }
 
 .main-menu {
-    max-width: $headerContainer;
+    position: fixed;
+    background: #ffffff;
+    z-index: 10;
+
+    /* max-width: $headerContainer; */
     width: 100%;
     height: fit-content;
     margin: auto;
     padding: 0 20px;
-    display: flex;
+/*     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-content: center;
+    align-content: center; */
+
+    .container {
+        max-width: $headerContainer;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
 
     .pages {
         text-transform: uppercase; 

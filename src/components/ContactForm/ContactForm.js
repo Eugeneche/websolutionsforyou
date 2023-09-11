@@ -26,7 +26,6 @@ const ContactForm = () => {
         emailjs.sendForm('service_fdvhv6g', 'template_rlcf1nr', form.current, '0zMiCaLJvSTuN8m-E')
             .then((result) => {
                 console.log(result.text)
-                console.log(form)
                 form.current.reset() // <<<
         }, (error) => {
                 console.log(error.text)
