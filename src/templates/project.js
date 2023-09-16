@@ -46,25 +46,25 @@ export const Head = ({ data }) => (
 
 
 export const query = graphql`
-query Project($directory: String, $locale: String, $id: String) {
-  allFile(
-    filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, relativeDirectory: {eq: $directory}}
-  ) {
-    nodes {
-      name
-      childImageSharp {
-        gatsbyImageData
-        id
+  query Project($directory: String, $locale: String, $id: String) {
+    allFile(
+      filter: {sourceInstanceName: {eq: "projects"}, extension: {eq: "jpg"}, relativeDirectory: {eq: $directory}}
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          gatsbyImageData
+          id
+        }
+      }
+    }
+    mdx(fields: {locale: {eq: $locale}}, id: {eq: $id}) {
+      body
+      frontmatter {
+        seo_description
+        seo_title
+        title
       }
     }
   }
-  mdx(fields: {locale: {eq: $locale}}, id: {eq: $id}) {
-    body
-    frontmatter {
-      seo_description
-      seo_title
-      title
-    }
-  }
-}
 `
