@@ -169,6 +169,29 @@ h2 {
             height: 33vw;
         }
     }
+
+    .gallery {
+        grid-template-columns: repeat(1, 100%);
+        column-gap: 0;
+    
+        .gallery-item-container {
+    
+            .project-image-title {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .project-image-gallery {
+        height: 50vw;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    
+    .projects-gallery-images {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 430px) {
@@ -181,5 +204,23 @@ h2 {
         a {
             height: 60vw;
         }
+    }
+
+    .projects-gallery-images {
+        width: 95%;
+    }
+
+    .gallery {
+    
+        .gallery-item-container {
+    
+            .project-image-title {
+                font-size: 3vw;
+            }
+        }
+    }
+
+    .project-image-gallery {
+        margin-bottom: 7vw;;
     }
 }

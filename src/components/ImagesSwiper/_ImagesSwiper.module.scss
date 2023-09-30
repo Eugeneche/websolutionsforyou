@@ -18,7 +18,7 @@ button {
     width: 90%;
     /* width: fit-content; */
     margin: 0 auto;
-    overflow-y: scroll;
+    overflow-y: scroll !important;
     background: white;
     /* cursor: zoom-out; */
 
@@ -46,7 +46,7 @@ button {
         width: 90%;
         /* width: fit-content; */
         margin: 2vh auto;
-        overflow-y: scroll;
+        /* overflow-y: scroll; */
         /* background: white; */
         /* cursor: zoom-out; */
     

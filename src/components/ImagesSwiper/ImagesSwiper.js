@@ -37,6 +37,7 @@ const ImagesSwiper = (props) => {
                         <GatsbyImage 
                             className={styles.increased}
                             image={img.childImageSharp.gatsbyImageData} 
+                            style={{display: "block"}}
                             alt={`Image of`} 
                             objectPosition="50% 50%"
                         />
