@@ -38,6 +38,7 @@ const ImagesSwiper = (props) => {
                             className={styles.increased}
                             image={img.childImageSharp.gatsbyImageData} 
                             style={{display: "block"}}
+                            imgStyle={{height: "auto"}}
                             alt={`Image of`} 
                             objectPosition="50% 50%"
                         />
