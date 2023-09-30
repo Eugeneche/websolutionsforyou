@@ -56,16 +56,80 @@ h2 {
     padding-top: 20px;
 }
 
-.projects-images {
+.projects-two-images, .projects-gallery-images {
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
 }
 
-.project-image {
+.project-image, .project-image-gallery {
     border: 1px solid #75bfff;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     box-shadow: 0 0 10px #e1e1e1;
 }
+
+    /* gallery */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 49%);
+    column-gap: 2%;
+
+    .gallery-item-container {
+        position: relative;
+
+        .project-image-title {
+            position: absolute;
+            margin: 0;
+            padding: 0 5px;
+            bottom: 7px;
+            /* left: 10px; */
+            color: #004887;
+            /* background: #ffffff; */
+            font-weight: 400;
+            text-transform: uppercase;           
+            z-index: 1;
+        }
+    }
+}
+
+.project-image-gallery {
+    height: 270px;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    img {
+        object-position: 50% 0 !important;
+    }
+
+    &:hover {
+        opacity: 0.7 !important;
+        transform: scale(1.01);
+    }
+}
+
+    /* end of gallery */
+    /* full image */
+
+.full-image {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000000a1;
+    z-index: 20;
+    cursor: grab;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+    /* end of full image */
 
 .content-from-mdx {
     padding-bottom: 30px;

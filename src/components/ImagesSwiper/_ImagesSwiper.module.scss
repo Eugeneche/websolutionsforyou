@@ -1,0 +1,68 @@
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.slide {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.increased {
+    display: block;
+    height: 100%;
+    width: 90%;
+    /* width: fit-content; */
+    margin: 0 auto;
+    overflow-y: scroll;
+    background: white;
+    /* cursor: zoom-out; */
+
+    div {
+        height: 94vh;
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: auto;
+        /* cursor: zoom-out; */
+        /* overflow: scroll; */
+    }
+}
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+    
+    .increased {
+        display: block;
+        height: 100%;
+        width: 90%;
+        /* width: fit-content; */
+        margin: 2vh auto;
+        overflow-y: scroll;
+        /* background: white; */
+        /* cursor: zoom-out; */
+    
+        div {
+            height: auto;
+            /* min-height: fit-content; */
+            max-height: 90vh;
+        }
+    
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: auto;
+            /* cursor: zoom-out; */
+            /* overflow: scroll; */
+        }
+    }
+}
