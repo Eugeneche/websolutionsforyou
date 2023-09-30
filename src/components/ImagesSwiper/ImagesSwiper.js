@@ -1,7 +1,7 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from "./_ImagesSwiper.module.scss"
-import "./imagesSwiper.scss"
+//import "./imagesSwiper.scss"
 import Carousel from "nuka-carousel"
 
 import left from "../../images/arrow-chevron-left.svg"
