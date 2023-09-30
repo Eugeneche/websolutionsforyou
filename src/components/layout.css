@@ -240,7 +240,7 @@ html, body {
 
 .global-wrapper {
   display: flex;
-  height: 100%;
+  height: 100% !important;
   flex-direction: column;
 }
 

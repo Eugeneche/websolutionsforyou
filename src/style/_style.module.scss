@@ -22,7 +22,7 @@ h2 {
 .projects-storefront {
     max-width: $contentContainer;
     margin: auto;
-    padding: 0 20px 50px;
+    padding: 0 20px 70px;
     height: min-content;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -151,6 +151,10 @@ h2 {
 /* END OF PROJECTS TEMPLATE */
 
 @media screen and (max-width: 1140px) {
+
+    .container {
+        max-width: 100vw;
+    }
     
     .projects-storefront {
 
@@ -222,5 +226,10 @@ h2 {
 
     .project-image-gallery {
         margin-bottom: 7vw;;
+    }
+
+    .close {
+        top: 12px;
+        right: 12px;
     }
 }

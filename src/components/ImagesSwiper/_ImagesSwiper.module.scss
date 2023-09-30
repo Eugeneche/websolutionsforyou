@@ -3,6 +3,10 @@ button {
     outline: none;
     background: transparent;
     cursor: pointer;
+
+    img {
+        margin: 0;
+    }
 }
 
 .slide {
@@ -34,6 +38,16 @@ button {
         /* cursor: zoom-out; */
         /* overflow: scroll; */
     }
+}
+
+.arrow-left {
+    position: relative;
+    left: 1vw;
+}
+
+.arrow-right {
+    position: relative;
+    right: 1vw;
 }
 
 /* mobile */
