@@ -15,8 +15,8 @@ const Header = () => {
     const { headerHero } = useTranslations()
 
     return (
-        <div className={style.header}>
-
+        <>
+    
             <div className={style.banner}>
                 <div className={style.bannerContainer}>
                     <img className={style.fist} src={fist} alt="fist for support for Ukraine"></img>
@@ -27,20 +27,16 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className={style.headerContainer}>
-                <div className={style.name}>web<br></br>solutions<br></br>for you</div>
-                <h1 className={style.hero}>{headerHero}</h1>
-                <div className={style.graph}><img src={graph} alt="graphs gif"></img></div>
-                <div className={style.progressbar}><img src={progressbar} alt="progressbar gif"></img></div>
-                <div className={style.rounds}><img src={rounds} alt="rolling rounds gif"></img></div>
-                {/* <StaticImage 
-                    src="../../images/header_main_image.png" 
-                    alt="web development"
-                    layout="constrained"
-                    height={600}
-                    style={{margin: "20px"}} /> */}
+            <div className={style.header}>
+                <div className={style.headerContainer}>
+                    <div className={style.name}>web<br></br>solutions<br></br>for you</div>
+                    <h1 className={style.hero}>{headerHero}</h1>
+                    <div className={style.graph}><img src={graph} alt="graphs gif"></img></div>
+                    <div className={style.progressbar}><img src={progressbar} alt="progressbar gif"></img></div>
+                    <div className={style.rounds}><img src={rounds} alt="rolling rounds gif"></img></div>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

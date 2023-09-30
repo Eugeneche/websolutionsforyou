@@ -1,3 +1,7 @@
+.slider-container {
+ touch-action: pan-y pinch-zoom !important;
+}
+
 .dots {
     top: 50px !important;
 }
