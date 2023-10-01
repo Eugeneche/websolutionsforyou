@@ -2,6 +2,18 @@
     touch-action: pan-y pinch-zoom !important;
 }
 
+.slider-container.slider-frame {
+    touch-action: pan-y pinch-zoom !important;
+}
+
+.slider-container>.slider-frame {
+    touch-action: pan-y pinch-zoom !important;
+}
+
+.slide {
+    touch-action: pinch-zoom;
+}
+
 .dots {
     top: 50px !important;
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from "./_ImagesSwiper.module.scss"
-//import "./imagesSwiper.scss"
+import "./imagesSwiper.scss"
 import Carousel from "nuka-carousel"
 
 import left from "../../images/arrow-chevron-left.svg"
@@ -15,7 +15,7 @@ const ImagesSwiper = (props) => {
             wrapAround={true}
             pauseOnHover={false}
             slideIndex={props.currentSlide}
-            animation="zoom"
+            /* animation="zoom" */
             /* adaptiveHeight={true} */
             /* className={styles.gallery} */
 /*             defaultControlsConfig={{
@@ -39,8 +39,8 @@ const ImagesSwiper = (props) => {
                         <GatsbyImage 
                             className={styles.increased}
                             image={img.childImageSharp.gatsbyImageData} 
-                            style={{display: "block"}}
-                            imgStyle={{height: "auto", maxWidth: "max-content"}}
+                            style={{display: "block", touchAction: "pinch-zoom"}}
+                            imgStyle={{height: "auto", maxWidth: "max-content", touchAction: "pinch-zoom"}}
                             alt={`Image of the project`} 
                             objectPosition="50% 50%"
                         />
