@@ -40,7 +40,7 @@ const ImagesSwiper = (props) => {
                             className={styles.increased}
                             image={img.childImageSharp.gatsbyImageData} 
                             style={{display: "block", touchAction: "pinch-zoom pan-y"}}
-                            imgStyle={{height: "auto", maxWidth: "max-content"/* , touchAction: "pinch-zoom" */}}
+                            imgStyle={{height: "auto", maxWidth: "max-content", touchAction: "pinch-zoom pan-y"}}
                             alt={`Image of the project`} 
                             objectPosition="50% 50%"
                         />
