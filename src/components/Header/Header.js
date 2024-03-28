@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <>
     
-            <div className={style.banner}>
+{/*             <div className={style.banner}>
                 <div className={style.bannerContainer}>
                     <img className={style.fist} src={fist} alt="fist for support for Ukraine"></img>
                     <span className={style.call}>Stand&nbsp;with&nbsp;Ukraine! Help&nbsp;Ukraine&nbsp;defeat&nbsp;global&nbsp;evil!</span>
@@ -25,7 +25,7 @@ const Header = () => {
                         <img className={style.cbaLogo} src={cba} alt="come back alive fund's logo"></img>
                     </a>
                 </div>
-            </div>
+            </div> */}
 
             <div className={style.header}>
                 <div className={style.headerContainer}>
