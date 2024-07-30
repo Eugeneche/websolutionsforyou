@@ -26,7 +26,7 @@ const Project = ({data, pageContext, children}) => {
   return (
     <>
       {showImageFull && <div className={styles.fullImage}>
-        <button onClick={() => setShowImageFull(false)}><img className={styles.close} src={close}></img></button>
+        <button onClick={() => setShowImageFull(false)}><img className={styles.close} src={close} alt="close icon"></img></button>
         <ImagesSwiper images={imagesWithoutCover} currentSlide={currentImageIndex} />
       </div>}
 

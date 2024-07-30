@@ -25,10 +25,10 @@ const ImagesSwiper = (props) => {
                 pagingDotsContainerClassName: "dots"
             }} */
             renderCenterLeftControls={({ previousSlide }) => (
-                <button onClick={previousSlide}><img className={styles.arrowLeft} src={left}></img></button>
+                <button onClick={previousSlide}><img className={styles.arrowLeft} src={left} alt="arrow left"></img></button>
               )}
               renderCenterRightControls={({ nextSlide }) => (
-                <button onClick={nextSlide}><img className={styles.arrowRight} src={right}></img></button>
+                <button onClick={nextSlide}><img className={styles.arrowRight} src={right} alt="arrow right"></img></button>
               )}
         >
             {props.images.map(img => {

@@ -25,7 +25,8 @@
   "phone": "Telefon",
   "email": "Email",
   "message": "Zpráva",
-  "write_to_email": "Chcete si vytvořit webové stránky nebo máte nějaké dotazy? Napište nám prosím do formuláře pro zpětnou vazbu nebo poštou: ",
+  "write_to_email": "Chcete si vytvořit webové stránky nebo máte nějaké dotazy? Napište prosím e-mailem: ",
+  "call_phone": "nebo zavolejte na číslo (WhatsApp, Viber): ",
 
   "four_o_four_title": "Omlouváme se, ale tato stránka neexistuje.",
   "four_o_four_text": "Je nám líto, ale nemůžeme najít stránku, kterou hledáte."

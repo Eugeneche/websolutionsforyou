@@ -250,7 +250,7 @@ main {
   padding-top: 57px; /* for case when main menu has position fixed */
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 440px) {
 
   main {
     padding-top: 81px; /* for case when main menu has position fixed */

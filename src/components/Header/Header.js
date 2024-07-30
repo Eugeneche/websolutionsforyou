@@ -7,8 +7,8 @@ import graph from "../../images/graphs.gif"
 import progressbar from "../../images/progressbar.gif"
 import rounds from "../../images/rounds.gif"
 
-import fist from "../../images/fist.png"
-import cba from "../../images/new-logo-en.svg"
+//import fist from "../../images/fist.png"
+//import cba from "../../images/new-logo-en.svg"
 
 const Header = () => {
 

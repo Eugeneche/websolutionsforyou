@@ -54,6 +54,7 @@ const query = graphql`
             email
             message
             write_to_email
+            call_phone
             four_o_four_title
             four_o_four_text
           }

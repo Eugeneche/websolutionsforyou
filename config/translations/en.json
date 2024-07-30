@@ -25,7 +25,8 @@
   "phone": "Phone",
   "email": "Email",
   "message": "Message",
-  "write_to_email": "Do you want to create a website or have any questions? Please write via the feedback form or email: ",
+  "write_to_email": "Do you want to create a website or have any questions? Please write via email: ",
+  "call_phone": "or call the number (WhatsApp, Viber): ",
 
   "four_o_four_title": "Sorry, but this page does not exist.",
   "four_o_four_text": "We're sorry, but we can't find the page you're looking for."

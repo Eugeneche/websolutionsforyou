@@ -1,8 +1,9 @@
 @import '../../style/vars';
 
 .header {
-    height: 700px;
+    height: 500px;
     background: $headerColor;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
 
     .header-container {
         max-width: $headerContainer;
@@ -11,7 +12,7 @@
         padding: 0 20px;
         display: grid;
         grid-template-columns: 57% 3% 18% 3% 3% 16%;
-        grid-template-rows: 5% 14% 12% 2% 32% 28%;
+        grid-template-rows: 5% 14% 8% 6% 49% 18%;
 
         .name {
             grid-area: 2/1/4/2;
@@ -78,17 +79,17 @@
 @media screen and (max-width: 1200px) {
     
     .header {
-        height: 58vw;
+        height: 44vw;
 
         .header-container {
 
             .name {
-                font-size: 3vw;
+                font-size: 2.2vw;
                 line-height: normal;
             }
 
             .hero {
-                font-size: 6vw;
+                font-size: 5.5vw;
             }
         }
     }

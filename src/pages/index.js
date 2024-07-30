@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
   })
   
   const {
-    index_H2_1,
+    /* index_H2_1, */
     chapter_1,
     index_H2_2,
     chapter_2_1,
