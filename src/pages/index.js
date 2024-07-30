@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
       <Header />
       <section>
         <div className={styles.container}> 
-          <h2>{index_H2_1}</h2>
+          
           <p>{chapter_1}</p>
           <h2>{index_H2_2}</h2>
           <p>{chapter_2_1}</p>
