@@ -59,7 +59,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
-          "G-KEP089530G" 
+          "G-JRF3RPQY2T" 
         ],
         // This object is used for configuration specific to this plugin
         pluginConfig: {
